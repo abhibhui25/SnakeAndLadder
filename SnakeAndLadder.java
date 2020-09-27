@@ -4,7 +4,7 @@ public class SnakeAndLadder {
 		int p1 = 0;
 		System.out.println("Welcome to snake and ladder game");
 		
-		while(p1<100){ 
+		while(p1!=100){ 
 		int i = (int) (Math.random() * 6 % 6) + 1;
 		System.out.println("value on the dice: " + i);
 		int o = (int) (Math.random() * 10 % 3);
@@ -13,8 +13,9 @@ public class SnakeAndLadder {
 		switch (o) {
 		case 1: {
 			System.out.println("Ladder");
-			p1 += i;
-			System.out.println("The new position of the player is: "+p1);
+			if((p1+i)<101){
+			p1+=i;
+			System.out.println("The new position of the player is: "+p1);}
 			break;
 		}
 		case 2: {
@@ -32,6 +33,7 @@ public class SnakeAndLadder {
 			System.out.println("No Movement");
 		}
 		}
+		System.out.println("The player has won the game");
 		
 	}
 }
